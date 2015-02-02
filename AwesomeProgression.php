@@ -106,13 +106,28 @@ class AwesomeProgression
     /** 
      * U(n+1) = U(n) × (U(n) + 1);
      */
-    public function arithmetic1($i, $dump = false) 
+    public function arithmetic1($i, $from = 1, $dump = false) 
     {
         //U0 = $from
         $n = 0;
-        $progression = [1];
+        $progression = [$from];
         while ($n < $i) {
             $progression[] = $progression[$n]*($progression[$n] + 1);
+            $n++;
+        }
+
+        return $dump?$progression:$progression[$i];
+    }
+
+    /** 
+     * Claculate any arithemtic progression
+     */
+    public function arithmetic($pattern, $i, $from = 1, $dump = false) 
+    {
+        $n = 0;
+        $progression = [$from];
+        while ($n < $i) {
+            $progression[] = eval(sprintf("return %s;", str_replace('%s', '$progression['.$n.']', $pattern)));
             $n++;
         }
 

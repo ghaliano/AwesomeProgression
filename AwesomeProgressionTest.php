@@ -34,6 +34,13 @@ class AwesomeProgressionTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($math->arithmetic1(5), 3263442);
     }
 
+    public function testArtmeticFunction()
+    {        
+        $math = new AwesomeProgression();
+
+        $this->assertEquals($math->arithmetic("%s * (%s + 1)", 5), 3263442);
+    }
+
     public function testConwayFunction()
     {        
         $math = new AwesomeProgression();
