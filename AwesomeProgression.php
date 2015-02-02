@@ -149,7 +149,7 @@ class AwesomeProgression
             $progression[] = $progression[$n] * $p;
             $n++;
         }
-        print_r($progression);
+        
         return $dump?$progression:$progression[$i];
     }
 
