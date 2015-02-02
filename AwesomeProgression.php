@@ -109,25 +109,9 @@ class AwesomeProgression
     }
 
     /** 
-     * U(n+1) = U(n) × (U(n) + 1);
-     */
-    public function arithmetic1($i, $from = 1, $dump = false) 
-    {
-        //U0 = $from
-        $n = 0;
-        $progression = [$from];
-        while ($n < $i) {
-            $progression[] = $progression[$n]*($progression[$n] + 1);
-            $n++;
-        }
-
-        return $dump?$progression:$progression[$i];
-    }
-
-    /** 
      * Claculate any arithemtic progression
      */
-    public function arithmetic($pattern, $i, $from = 1, $dump = false) 
+    public function progression($pattern, $i, $from = 1, $dump = false) 
     {
         $n = 0;
         $progression = [$from];
@@ -136,6 +120,36 @@ class AwesomeProgression
             $n++;
         }
 
+        return $dump?$progression:$progression[$i];
+    }
+
+    /** 
+     * U(n+1) = U(n) + p;
+     */
+    public function arithmetic($i, $from = 1, $p = 1, $dump = false) 
+    {
+        //U0 = $from
+        $n = 0;
+        $progression = [$from];
+        while ($n < $i) {
+            $progression[] = $progression[$n] + $p;
+            $n++;
+        }
+        return $dump?$progression:$progression[$i];
+    }
+
+    /** 
+     */
+    public function geometric($i, $from, $p, $dump = false) 
+    {
+        //U0 = $from
+        $n = 0;
+        $progression = [$from];
+        while ($n < $i) {
+            $progression[] = $progression[$n] * $p;
+            $n++;
+        }
+        print_r($progression);
         return $dump?$progression:$progression[$i];
     }
 

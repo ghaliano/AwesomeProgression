@@ -27,18 +27,19 @@ class AwesomeProgressionTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($cauchy[0] > $cauchy[8]);
     }
 
-    public function testArtmetic1Function()
-    {        
-        $math = new AwesomeProgression();
-
-        $this->assertEquals($math->arithmetic1(5), 3263442);
-    }
-
     public function testArtmeticFunction()
     {        
         $math = new AwesomeProgression();
 
-        $this->assertEquals($math->arithmetic("%s * (%s + 1)", 5), 3263442);
+        $this->assertEquals($math->arithmetic(10, 1, 1), 11);
+        $this->assertEquals($math->arithmetic(10, 1, 4), 41);
+    }
+
+    public function testGeometricFunction()
+    {        
+        $math = new AwesomeProgression();
+
+        $this->assertEquals($math->geometric(10, 1, 3), 59049);
     }
 
     public function testConwayFunction()
@@ -46,5 +47,12 @@ class AwesomeProgressionTest extends PHPUnit_Framework_TestCase
         $math = new AwesomeProgression();
 
         $this->assertEquals($math->conway(5), 312211);
+    }
+
+    public function testProgressionFunction()
+    {        
+        $math = new AwesomeProgression();
+
+        $this->assertEquals($math->progression("%s * (%s + 1)", 5), 3263442);
     }
 }
