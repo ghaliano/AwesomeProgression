@@ -22,7 +22,12 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * This class calculate some popular progressions 
- * and Math functions like factoriel and Test prime number
+ * Supported progression:
+ *   fibonachi
+ *   collatz
+ *   cauchy
+ *   conway
+ *   arithmetic1:  U(n+1) = U(n) × (U(n) + 1)
  *
  * @author Ghali Ahmed<ghaliano2005@gmail.com>
  * @version 1.0
