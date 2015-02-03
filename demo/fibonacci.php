@@ -5,7 +5,7 @@
 include('../AwesomeProgression.php');
 $awesomeProgression = new AwesomeProgression();
 
-$fibonachi = json_encode($awesomeProgression->fibonacci(isset($_GET['i'])?$_GET['i']:10, true));
+$fibonachi = json_encode($awesomeProgression->fibonnaci(isset($_GET['i'])?$_GET['i']:10, true));
 ?>
 
 <form style="position: absolute; right:0; top:0; background: white; padding: 3px;">

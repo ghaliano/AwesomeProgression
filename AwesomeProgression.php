@@ -23,7 +23,7 @@
  *
  * This class calculate some popular progressions 
  * Supported progression:
- *   fibonacci
+ *   fibonnaci
  *   collatz
  *   cauchy
  *   conway
@@ -40,7 +40,7 @@ class AwesomeProgression
      * U(2) = 1;
      * U(n) = U(n-1) + U(n-2)
      */
-    public function fibonacci($i, $dump = false)  
+    public function fibonnaci($i, $dump = false)  
     {
         $progression = [0,1];
         $n = 2;
