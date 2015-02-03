@@ -3,12 +3,12 @@ include('AwesomeProgression.php');
 
 class AwesomeProgressionTest extends PHPUnit_Framework_TestCase
 {
-    public function testFibonachiFunction()
+    public function testfibonacciFunction()
     {        
         $math = new AwesomeProgression();
         
-        $this->assertEquals($math->fibonachi(4), 3);
-        $this->assertEquals($math->fibonachi(8), 21);
+        $this->assertEquals($math->fibonacci(4), 3);
+        $this->assertEquals($math->fibonacci(8), 21);
     }
 
     public function testCollatzFunction()
