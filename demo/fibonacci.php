@@ -5,14 +5,18 @@
 include('../AwesomeProgression.php');
 $awesomeProgression = new AwesomeProgression();
 
-$fibonachi = json_encode($awesomeProgression->fibonacci(11, true));
+$fibonachi = json_encode($awesomeProgression->fibonacci(isset($_GET['i'])?$_GET['i']:10, true));
 ?>
+
+<form style="position: absolute; right:0; top:0; background: white; padding: 3px;">
+<input name="i" type="text"/> <button type="submit">Update</button>
+</form>
 
 <script>
 	var data = <?php echo $fibonachi ?>;
 	
 	var unite = 10;
-	var canvasW = 2000;
+	var canvasW = 1200;
 	var canvasH = 700;
 	
 	function drawTile() 
@@ -32,7 +36,7 @@ $fibonachi = json_encode($awesomeProgression->fibonacci(11, true));
 		background(0);
 		noSmooth();
 		drawTile();
-		var x0 = canvasW/2;
+		var x0 = canvasW/4;
 		var y0 = canvasH/4;
 		var x = x0;
 		var y = y0;
